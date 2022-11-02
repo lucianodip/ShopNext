@@ -1,5 +1,6 @@
 import NextLink from 'next/link';
-import { AppBar, Box, Button, Link, Toolbar, Typography } from "@mui/material"
+import { AppBar, Badge, Box, Button, IconButton, Link, Toolbar, Typography } from "@mui/material"
+import { SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 
 
 export const Navbar = () => {
@@ -15,7 +16,7 @@ export const Navbar = () => {
                 
                 <Box flex={1}/>
 
-                <Box>
+                <Box sx={{display: {xs:'none',sm:'block'}}}>
                     <NextLink href='/category/men' passHref>
                         <Link>
                             <Button>Hombres</Button>
@@ -33,9 +34,30 @@ export const Navbar = () => {
                             <Button>Niños</Button>
                         </Link>
                     </NextLink>
+
                 </Box>
+              
 
                 <Box flex={1}/>
+
+                <IconButton>
+                    <SearchOutlined/>
+                </IconButton>
+
+                <NextLink href='/cart' passHref>
+                    <Link>
+                        <IconButton>
+                            <Badge badgeContent={ 2 } color="secondary">
+                                <ShoppingCartOutlined/> 
+                            </Badge> 
+                        </IconButton>
+                    </Link>
+                </NextLink>
+
+
+                <Button>
+                    Menú
+                </Button>
 
             </Toolbar>
         </AppBar>
