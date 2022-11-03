@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { FC } from 'react';
-import { Navbar, NavbarLDP } from '../ui';
+import { Navbar, NavbarLDP, SideMenu } from '../ui';
 
 
 
@@ -38,11 +38,11 @@ export const ShopLayout:FC<Props> = ({ children ,title, pageDescription, imageFu
       </nav>
 
     
-      {/* Sidebar */}
+      <SideMenu/>
 
     
       <main style={{
-        margin:'80px auto',
+        margin:'40px auto',
         maxWidth:'1440px',  //para que no se extienda tanto la pantalla
         padding: '0px 30px'
       }}>
